@@ -1,5 +1,8 @@
 <template>
   <view>
+
+    <NavBar></NavBar>
+
     <div class="backgroud-container">
     <div class="container" style="display: flex;justify-content: center;height: 300px;width: 100%;">
     
@@ -14,6 +17,8 @@
                 <div v-if="selectedPost" style="display: flex;flex-direction: row;">
 
                  
+    
+
 
     <div class="container" style="width: 1500px;height: 100%;">
     <!-- Bootstrap Carousel 轮播图 -->
@@ -61,7 +66,7 @@
                   <p style="margin-left: 8%;margin-top: 7px;">{{ selectedPost.description }}</p>
                   
                   
-                    
+                  <h5 style="margin-left: 2%;margin-top: 20px;border-top: 1px solid gainsboro;padding-top: 10px;font-weight: bold;">{{ selectedPost.comments.length }} comments in total</h5>
                   <comments_cardsVue :comments="selectedPost.comments" @delete-comment="handleDeleteComment"></comments_cardsVue>
 
                 </div>
@@ -79,6 +84,9 @@
       </div>
       
   </div>
+
+      <AppFooter></AppFooter>
+
   </view>
 </template>
 
@@ -87,12 +95,16 @@
   import postListVue from '../../components/postList.vue';
   import modalVue from '../../components/modal.vue';
   import comments_cardsVue from '../../components/comments_cards.vue';
+  import NavBar from '../../components/NavBar.vue';
+  import AppFooter from '../../components/AppFooter.vue';
   export default {
     components:{
       danmuVue,
       postListVue,
       modalVue,
-      comments_cardsVue
+      comments_cardsVue,
+      NavBar,
+      AppFooter
     },
     data() {
       return {

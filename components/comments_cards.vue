@@ -21,8 +21,8 @@
 <div class="function_content" style="margin-top: 6px;">
 <!-- <button class="btn custom-btn" style="margin-left: 70px;">reply</button> -->
 <!-- <button class="btn custom-btn" style="margin-left: -3px;" @click="deleteComment(index)">delete</button> -->
- <img v-show="!isLiked[index]" src="../static/like.png" alt="" style="height: 20px;width: 20px;margin-left: 84px;" @click="accpet(index)" > 
- <img v-show="isLiked[index]" src="../static/isLiked.png" alt="" style="height: 20px;width: 20px;margin-left: 84px;" @click="accpet(index)" > 
+ <img v-show="!isLiked[index]" src="../static/like.png" alt="" style="height: 20px;width: 20px;margin-left: 80px;" @click="accpet(index)" > 
+ <img v-show="isLiked[index]" src="../static/isLiked.png" alt="" style="height: 20px;width: 20px;margin-left: 80px;" @click="accpet(index)" > 
 
 <img src="../static/delete_icon.png" style="height: 20px;width: 20px;margin-left: 18px;" alt="" @click="deleteComment(index)"/>
 
