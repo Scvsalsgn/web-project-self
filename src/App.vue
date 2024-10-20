@@ -1,26 +1,44 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<div>
+
+	<h1>你好!这是app.vue索引界面</h1>
+	<router-link to="/community">前往页面</router-link>
+
+
+	<router-view></router-view>
+</div>
 </template>
+	
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+	export default {
+		onLaunch: function() {
+			console.warn('当前组件仅支持 uni_modules 目录结构 ，请升级 HBuilderX 到 3.1.0 版本以上！')
+			console.log('App Launch')
+		},
+		onShow: function() {
+			console.log('App Show')
+		},
+		onHide: function() {
+			console.log('App Hide')
+		}
+	}
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+	/*每个页面公共css */
+	@import '/public/index.scss';
+	/* #ifndef APP-NVUE */
+	@import '/static/customicons.css';
+	// 设置整个项目的背景色
+	page {
+		background-color: #f5f5f5;
+	}
+
+	/* #endif */
+	.example-info {
+		font-size: 14px;
+		color: #333;
+		padding: 10px;
+	}
 </style>
