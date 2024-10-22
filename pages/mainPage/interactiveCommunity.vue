@@ -117,47 +117,44 @@
       submitClick(){
         const name = '我'
       const content = this.content
-      // 1、检查输入的合法性
+      // 1. Checking the legality of inputs
       if (!name || !content) {
-        alert('姓名或内容不能为空！')
+        alert('The content cannot be empty！')
         return
       }
-      // 2、根据输入的数据，封装成一个comment对象
+      // 2. Based on the input data, encapsulate it into a comment object
       const comment = {
         name,
         content
       }
       console.log(comment,"comment in AddVue")
-      // 3、添加到comments中
+      // 3、add to comments
       this.addComment(comment)
-      // 4、清空输入框
+      // 4、clear input box
       this.name = ''
       this.content = ''
-      this.$nextTick(() => {
-      console.log("评论已提交，并已清空输入框", this.name, this.content);
-    });
       },
       addComment (comment) {
         if (this.selectedPost && this.selectedPost.comments) {
-    this.selectedPost.comments.unshift(comment); // 使用 unshift 添加评论到开头
+    this.selectedPost.comments.unshift(comment); // add comment to the beginning of the array by unshift method
   } else {
     console.error('selectedPost or comments is undefined');
   }
     },
 
       handlePostSelected(post) {
-            this.selectedPost = post; // 接收到选中的 post 数据
-            //这是引用，所以会自动更新
+            this.selectedPost = post; //receive selected post data from postList
+            //this is reference, so it will refresh automatically
             this.showModal = true;
           },
     
       handleDeleteComment(index) {
     try {
       if (this.selectedPost && this.selectedPost.comments) {
-        this.selectedPost.comments.splice(index, 1);  // 删除操作
+        this.selectedPost.comments.splice(index, 1);  // to delete a comment, we can use splice method to remove it from the array
       }
     } catch (error) {
-      console.warn('Error caught: ', error);  // 可以记录错误或完全忽略
+      console.warn('Error caught: ', error); 
     }
   }
     }
@@ -165,24 +162,14 @@
 </script>
 
 <style lang="scss">
-.backgroud-container{
-   // background-image: url('/static/bg1.jpg');
-     background-size: cover; /* 背景图覆盖整个页面 */
-     background-position: center; /* 背景图居中 */
-     background-repeat: no-repeat; /* 防止背景图重复 */
-     width: 100vw; /* 宽度设置为视口宽度 */
-     height: 100vh; /* 高度设置为视口高度 */
-     // display: flex;
-     // flex-direction: column;
-}
-
 .scroll_item{
-  max-height: 580px; /* 固定评论区域高度，允许滚动 */
+  max-height: 580px; 
   overflow-y: hidden;
   padding: 10px;
   margin-bottom: 20px;
-  padding-right: 20px; /* 增加右侧的 padding，使内容不被滚动条遮挡 */
-  margin-right: -20px; /* 通过负 margin 隐藏滚动条 */
+  padding-right: 20px; 
+  margin-right: -20px; 
+  // padding and margin to make the scroll bar disappear
 
 }
 

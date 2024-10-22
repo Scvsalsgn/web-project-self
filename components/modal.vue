@@ -2,7 +2,7 @@
 <template>
   <div v-if="show" class="modal-overlay" @click="closeModal">
     <div class="modal-content" @click.stop>
-      <slot></slot> <!-- 插槽，用于传入自定义内容 -->
+      <slot></slot> <!-- slot for content -->
       <!-- <button @click="closeModal">Close</button> -->
     </div>
   </div>
@@ -31,11 +31,11 @@ export default {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* 确保在页面上方 */
+  z-index: 1000; /*make sure it's on top */
 }
 
 .modal-content {

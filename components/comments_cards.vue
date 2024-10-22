@@ -55,7 +55,6 @@ export default {
             this.isLiked[index]=!this.isLiked[index]
         },
         deleteComment(index){
-            // this.comments.splice(index, 1)  //props为只读，不可直接在子组件中修改
             this.$emit('delete-comment', index);
             console.log(index,"index before")
         }
@@ -86,15 +85,15 @@ export default {
 
 
 <style>
-.scroll_item{
-  max-height: 410px; /* 固定评论区域高度，允许滚动 */
+/* .scroll_item{
+  max-height: 410px; 
   overflow-y: hidden;
   padding: 10px;
   margin-bottom: 20px;
 }
 
 .scroll_item:hover{
-  overflow-y: auto;  /* 当内容溢出时，启用垂直滚动 */  
-}
+  overflow-y: auto;  
+} */
 </style>
 

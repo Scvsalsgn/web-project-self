@@ -90,7 +90,7 @@ export default {
   },
   methods:{
     selectPost(post) {
-          this.$emit('post-selected', post); // 向父组件传递选中的post数据
+          this.$emit('post-selected', post); // trigger event to pass selected post data to parent component
         },
     deleteComment(postId,commentIndex){
       console.log("this.posts",this.posts)
@@ -98,7 +98,7 @@ export default {
           // this.posts.comments.splice(index, 1);
            const post = this.posts.find(p => p.id === postId);
                 if (post && post.comments) {
-                  post.comments.splice(commentIndex, 1); // 删除指定评论
+                  post.comments.splice(commentIndex, 1); // delete comment at index
                   console.log('Deleted comment at index', commentIndex);
                 }
           console.log("deleted a this index",index)
@@ -113,24 +113,24 @@ export default {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* 使得卡片均匀分布 */
+  justify-content: space-between; /*make cards evenly spaced*/ 
   padding: 16px;
 }
 
 .card-item {
-  flex: 0 1 calc(33.33% - 16px); /* 设置每个卡片的宽度，减去间距 */
-  margin-bottom: 16px; /* 每个卡片下方的间距 */
+  flex: 0 1 calc(33.33% - 16px); /*set card width to 33.33% and add 16px gutters */ 
+  margin-bottom: 16px; /*add 16px margin between cards */ 
 }
 
 @media (max-width: 1024px) {
   .card-item {
-    flex: 0 1 calc(50% - 16px); /* 屏幕较窄时，每行显示2个卡片 */
+    flex: 0 1 calc(50% - 16px); /*display only 2 cards per row on smaller screens */ 
   }
 }
 
 @media (max-width: 600px) {
   .card-item {
-    flex: 0 1 100%; /* 更小的屏幕时，每行显示1个卡片 */
+    flex: 0 1 100%; /* display only one card per row on smaller screens */
   }
 }
 </style>
