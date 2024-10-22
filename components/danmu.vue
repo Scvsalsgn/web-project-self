@@ -41,8 +41,10 @@
   position: relative;
   // width: 100%;
   // width: 30%;
-  width: 500px;
-  height: 300px; /* 根据需求设定高度 */
+  width: 1440px;
+  // width: 500px;
+  // height: 300px; /* 根据需求设定高度 */
+  height: 600px;
   border-radius: 20px; /* 气泡框圆角 */
   background-image: url("https://ts1.cn.mm.bing.net/th/id/R-C.d07816d313cad5d2b53b30192443c4c5?rik=SUozltQgAs8%2bNQ&riu=http%3a%2f%2fn.sinaimg.cn%2fsinacn10119%2f600%2fw1920h1080%2f20190325%2f6449-hutwezf3366892.jpg&ehk=DH2hT8Ey9e3gfn%2fUBKrQFjRb3LPXUs9sEIOq4LRDZfQ%3d&risl=&pid=ImgRaw&r=0");
   overflow: hidden;

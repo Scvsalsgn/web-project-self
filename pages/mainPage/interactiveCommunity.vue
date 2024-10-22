@@ -3,45 +3,44 @@
 
     <NavBar></NavBar>
 
-    <div class="backgroud-container">
-    <div class="container" style="display: flex;justify-content: center;height: 300px;width: 100%;">
+
+    <div class="container" style="display: flex; justify-content: center;height: 300px;width: 100%;margin-top: 10px;">
     
     <danmu-vue></danmu-vue>
-    <!-- <danmu-vue style="width: 40%;height: 400px;margin-left: 8%;"></danmu-vue> -->
+
     </div>
-      <postListVue @post-selected="handlePostSelected" ref="postList"></postListVue>
-      
-      <div class="modal-container" >
+
+    <div style="position:initial;margin-top: 320px;">
+      <postListVue @post-selected="handlePostSelected" ref="postList" style="position: relative;"></postListVue>
+    </div>
+
+      <div class="modal-container">
       <modalVue :show="this.showModal" @close="this.showModal=false">
-        <!-- 在弹窗中展示选中的 post 数据 -->
-                <div v-if="selectedPost" style="display: flex;flex-direction: row;">
+              <div v-if="selectedPost" style="display: flex;flex-direction: row;">
 
-                 
+                
+<div class="carousel-container" style="width: 1500px;height: 100%;">
     
-
-
-    <div class="container" style="width: 1500px;height: 100%;">
-    <!-- Bootstrap Carousel 轮播图 -->
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" style="margin-top: calc(50% - 200px);">
-      <!-- 轮播图指示器 -->
+    
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
       </div>
       
-      <!-- 轮播图项目 -->
+    
       <div class="carousel-inner" >
-        <!-- 第一张幻灯片 -->
+    
         <div class="carousel-item active">
           <img :src="selectedPost.image1" class="d-block w-100" alt="Image 1" style="object-fit: contain;width:100%;">
         </div>
-        <!-- 第二张幻灯片 -->
+    
         <div class="carousel-item">
           <img :src="selectedPost.image2" class="d-block w-100" alt="Image 2" style="object-fit: contain;width:100%;">
         </div>
       </div>
       
-      <!-- 上一张和下一张控制 -->
+    
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -52,9 +51,9 @@
       </button>
     </div>
   </div>
-                  
-                  
-                  <div class="content-container" style="width: 1100px;border-left: 1px solid gainsboro;">
+
+
+                <div class="content-container" style="width: 1100px;border-left: 1px solid gainsboro;">
                     <div class="author" style="display: flex; flex-direction:row;margin-left: 6%;margin-top: 2%;border-bottom:1px gainsboro solid;">
                       <img src="../../static/my_icon.png" alt="" style="height: 50px;width: 50px;"/>
                       <text style="align-self: center;margin-left: 10px;font-size: 18px;color: dimgray;">用户名</text>
@@ -83,7 +82,7 @@
       </modalVue>
       </div>
       
-  </div>
+
 
       <AppFooter></AppFooter>
 
@@ -97,6 +96,7 @@
   import comments_cardsVue from '../../components/comments_cards.vue';
   import NavBar from '../../components/NavBar.vue';
   import AppFooter from '../../components/AppFooter.vue';
+  
   export default {
     components:{
       danmuVue,
@@ -104,7 +104,7 @@
       modalVue,
       comments_cardsVue,
       NavBar,
-      AppFooter
+      AppFooter,
     },
     data() {
       return {
@@ -150,9 +150,7 @@
             //这是引用，所以会自动更新
             this.showModal = true;
           },
-      // handleDeleteComment(index){
-      //   this.$refs.postList.deleteComment(this.selectedPost.id,index);
-      // }
+    
       handleDeleteComment(index) {
     try {
       if (this.selectedPost && this.selectedPost.comments) {
@@ -187,5 +185,6 @@
   margin-right: -20px; /* 通过负 margin 隐藏滚动条 */
 
 }
+
 
 </style>
