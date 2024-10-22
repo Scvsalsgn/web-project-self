@@ -85,7 +85,7 @@ export default {
 
 
 <style>
-/* .scroll_item{
+.scroll_item{
   max-height: 410px; 
   overflow-y: hidden;
   padding: 10px;
@@ -94,6 +94,6 @@ export default {
 
 .scroll_item:hover{
   overflow-y: auto;  
-} */
+}
 </style>
 

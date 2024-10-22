@@ -6,7 +6,7 @@
 
     <div class="container" style="display: flex; justify-content: center;height: 300px;width: 100%;margin-top: 10px;">
     
-    <danmu-vue></danmu-vue>
+    <danmuCard-vue></danmuCard-vue>
 
     </div>
 
@@ -15,7 +15,7 @@
     </div>
 
       <div class="modal-container">
-      <modalVue :show="this.showModal" @close="this.showModal=false">
+      <modalPartVue :show="this.showModal" @close="this.showModal=false">
               <div v-if="selectedPost" style="display: flex;flex-direction: row;">
 
                 
@@ -79,7 +79,7 @@
                   
                 </div>
                 <!-- <comments_cardsVue :comments="selectedPost.comments" @delete-comment="handleDeleteComment"></comments_cardsVue> -->
-      </modalVue>
+      </modalPartVue>
       </div>
       
 
@@ -90,18 +90,18 @@
 </template>
 
 <script>
-  import danmuVue from '../../components/danmu.vue';
+  import danmuCardVue from '../../components/danmuCard.vue';
   import postListVue from '../../components/postList.vue';
-  import modalVue from '../../components/modal.vue';
+  import modalPartVue from '../../components/modalPart.vue';
   import comments_cardsVue from '../../components/comments_cards.vue';
   import NavBar from '../../components/NavBar.vue';
   import AppFooter from '../../components/AppFooter.vue';
   
   export default {
     components:{
-      danmuVue,
+      danmuCardVue,
       postListVue,
-      modalVue,
+      modalPartVue,
       comments_cardsVue,
       NavBar,
       AppFooter,

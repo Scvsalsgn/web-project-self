@@ -1,15 +1,15 @@
 <template>
   <div class="post-list">
-    <cards v-for="post in posts" :key="post.id" :post="post" @click="selectPost(post)"/>
+    <postCards v-for="post in posts" :key="post.id" :post="post" @click="selectPost(post)"/>
   </div>
 </template>
 
 <script>
-import cards from './cards.vue';
+import postCards from './postCards.vue';
 
 export default {
   components: {
-    cards,
+    postCards,
   },
   data() {
     return {
@@ -80,10 +80,38 @@ export default {
         {name: 'Rose', content: 'What things have you ever done ?!'}
         ],
       },
-        { id: 9, title: 'Post 3', description: 'Description 3', image1: 'https://via.placeholder.com/300' },
-        { id: 10, title: 'Post 3', description: 'Description 3', image1: 'https://via.placeholder.com/300' },
-        { id: 11, title: 'Post 3', description: 'Description 3', image1: 'https://via.placeholder.com/300' },
-        { id: 12, title: 'Post 3', description: 'Description 3', image1: 'https://via.placeholder.com/300' },
+      { id: 9, title: '海口观海台', description: '拍摄于日出前的蓝调，第一次用12mm焦段。晒晒海口的风光', 
+        image1: 'https://sns-webpic-qc.xhscdn.com/202410221714/74ed1ee986404129566c88fc84d436f0/1040g00831969rfmp4u004aco5t260ej1f88hgb0!nc_n_webp_mw_1',
+        comments: [ 
+        {name: 'Bob', content: 'You see see you !'},
+        {name: 'Jack', content: 'One day day 的!'},
+        {name: 'Rose', content: 'What things have you ever done ?!'}
+    ],
+         },
+        { id: 10, title: '这儿可能是海口人最多的地方', description: '不知道是不是淡季 哪哪人都很少坐公交经常包车就骑楼老街人不少一半诗意一半烟火 洋气复古 妈祖保佑 连吃几天吃老爸茶', 
+        image1: 'https://sns-webpic-qc.xhscdn.com/202410221718/c42c201250cc8ce0d4c89852686086f2/1040g0083190qn0d154005nrfdo3g8ofksdib6lg!nc_n_webp_mw_1',
+        comments: [ 
+        {name: 'Bob', content: 'You see see you !'},
+        {name: 'Jack', content: 'One day day 的!'},
+        {name: 'Rose', content: 'What things have you ever done ?!'}
+    ],  
+         },
+        { id: 11, title: 'Sunset in Haikou CBD is actually so beautiful!',  description: "Guoxing Avenue Danyingshan CBD has taken shape, the future to be built in Hainan Center, Haikou's skyline will be more layered!" ,
+        image1: 'https://mp-c3036ca5-d4f1-4495-acd5-cf521789bd80.cdn.bspapp.com/static/img1.jpg',image2:'https://mp-c3036ca5-d4f1-4495-acd5-cf521789bd80.cdn.bspapp.com/static/img2.jpg' ,
+        comments: [
+        {name: 'Bob', content: 'You see see you !'},
+        {name: 'Jack', content: 'One day day 的!'},
+        {name: 'Rose', content: 'What things have you ever done ?!'}
+        ],
+      },
+        { id: 12, title: 'Haikou Impression',  description: 'The old street of Haikou Jialou is bustling at night, locals gather in twos and threes to eat and drink and chat, and the roadside is full of motorized bicycles, which is the sense of relaxation of Haikou people, right?',
+         image1: 'https://sns-webpic-qc.xhscdn.com/202410221712/c1df0e9958b36d062298ba60eaa007a7/1040g0083196631g44k405n89krpllcniuan75q8!nd_dft_wgth_webp_3',
+        comments: [
+        {name: 'Bob', content: 'You see see you !'},
+        {name: 'Jack', content: 'One day day 的!'},
+        {name: 'Rose', content: 'What things have you ever done ?!'}
+        ],
+      },
         
       ],
     };

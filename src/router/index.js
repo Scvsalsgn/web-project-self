@@ -1,6 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 import App from "../App.vue";
-import interactiveCommunity from "../../pages/mainPage/interactiveCommunity.vue";
+import InteractiveCommunity from "../../pages/mainPage/InteractiveCommunity.vue";
 
 const routes = [
   {
@@ -11,7 +11,7 @@ const routes = [
   {
     path: "/community",
     name: "community",
-     component: interactiveCommunity,
+     component: InteractiveCommunity,
   }
 ];
 

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import danmuVue from '../../components/danmu.vue'
+  import danmuVue from '../../components/danmuCard.vue'
 	export default {
     components:{
       danmuVue
